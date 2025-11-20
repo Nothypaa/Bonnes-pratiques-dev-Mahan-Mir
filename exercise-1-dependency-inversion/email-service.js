@@ -55,13 +55,12 @@ const sendgrid = {
   }
   
   const user = { firstName: 'Kenan', email: 'kenan@example.com' };
-  
-  const prodMailProvider = new SendGridMailProvider();
-  const emailService = new EmailService(prodMailProvider);
-  emailService.sendWelcomeEmail(user);
-  
-  const testMailProvider = new FakeMailProvider();
-  const testEmailService = new EmailService(testMailProvider);
-  testEmailService.sendWelcomeEmail(user);
-  console.log('\nCaptured emails:', testMailProvider.getSentEmails());
-  
+
+const prodMailProvider = new SendGridMailProvider();
+const emailService = new EmailService(prodMailProvider);
+emailService.sendWelcomeEmail(user);
+
+const testMailProvider = new FakeMailProvider();
+const testEmailService = new EmailService(testMailProvider);
+testEmailService.sendWelcomeEmail(user);
+console.log('\nCaptured emails:', testMailProvider.getSentEmails());
