@@ -18,3 +18,13 @@ function formatPrice(value) {
     const strategy = shippingStrategies[type];
     return strategy ? strategy(orderAmount) : 0;
   }
+
+
+
+  calcButton.addEventListener('click', () => {
+  const type = shippingSelect.value;
+  const amount = Number(amountInput.value) || 0;
+
+  const shippingCost = calculateShippingCost(type, amount);
+  resultEl.textContent = 'Frais de livraison : ' + formatPrice(shippingCost);
+});
